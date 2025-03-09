@@ -17,6 +17,7 @@
         <Label Grid.Row="0"
                Grid.Column="1"
                Text="News Pilot"
+               x:Name="LblCategoryName"
                FontSize="Title"
                FontAttributes="Bold"
                HorizontalOptions="Center"
@@ -35,10 +36,10 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Border Padding="5" Margin="5">
-                        <VerticalStackLayout Padding="10" Spacing="0" VerticalOptions="Center">
-                            <Image HeightRequest="200" Aspect="Fill" Source="{Binding Image}"/>
-                            <Label FontSize="Medium" Text="{Binding Title}"/>
-                        </VerticalStackLayout>
+                        <HorizontalStackLayout Padding="10" Spacing="0" VerticalOptions="Center">
+                            <Image WidthRequest="200" HeightRequest="150" Aspect="Fill" Source="{Binding Image}"/>
+                            <Label WidthRequest="150" Margin="10" FontSize="Medium" Text="{Binding Title}"/>
+                        </HorizontalStackLayout>
                     </Border>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

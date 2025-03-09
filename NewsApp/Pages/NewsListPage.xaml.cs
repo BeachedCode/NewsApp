@@ -10,6 +10,7 @@ public partial class NewsListPage : ContentPage
     public NewsListPage(Category item)
 	{
 		InitializeComponent();
+        LblCategoryName.Text = item.Name;
         selectedGenre = item.Name;
         GetBreakingNews();
         ArticleList = new List<Article>();
