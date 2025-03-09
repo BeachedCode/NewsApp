@@ -42,4 +42,12 @@ public partial class NewsHomePage : ContentPage
         Navigation.PushAsync(new NewsListPage(selectedGenre));
         ((CollectionView)sender).SelectedItem = null;
     }
+
+    private void CvNews_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        var selectedArticle = e.CurrentSelection.FirstOrDefault() as Article;
+        if (selectedArticle == null) return;
+        Navigation.PushAsync(new NewsDetailPage(selectedArticle));
+        ((CollectionView)sender).SelectedItem = null;
+    }
 }
