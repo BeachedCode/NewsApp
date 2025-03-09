@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="NewsApp.Pages.NewsListPage"
-             Title="NewsListPage">
+             x:Class="NewsApp.Pages.NewsListPage">
     <Grid RowDefinitions="Auto, *"
           ColumnDefinitions="*,Auto,*">
 
         <Button Grid.Row="0"
                 Grid.Column="0"
-                Text="Go Back"
+                Text="Return"
+                Margin="20"
+                WidthRequest="100"
                 Clicked="Button_Clicked"
-                HorizontalOptions="Center"
+                HorizontalOptions="Start"
                 VerticalOptions="Center"/>
 
         <Label Grid.Row="0"
@@ -26,7 +27,8 @@
                         Grid.ColumnSpan="3"
                         Margin= "5"
                         x:Name="CvNews"
-                        SelectionMode="Single">
+                        SelectionMode="Single"
+                        SelectionChanged="CvNews_SelectionChanged">
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Vertical" ItemSpacing="15"/>
             </CollectionView.ItemsLayout>

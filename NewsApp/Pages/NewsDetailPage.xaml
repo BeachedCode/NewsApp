@@ -1,12 +1,37 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="NewsApp.Pages.NewsDetailPage"
-             Title="NewsDetailPage">
-    <VerticalStackLayout>
+             x:Class="NewsApp.Pages.NewsDetailPage">
+    <Grid RowDefinitions="Auto,Auto,Auto,*">
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Grid.Row="0"
+            Text="Article Title"
+            x:Name="LblTitle"
+            FontSize="Title"
+            Margin="10"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+            HorizontalOptions="Center"/>
+        <Image
+            Grid.Row="1"
+            x:Name="ArticleImg"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            WidthRequest="450"/>
+        <Label
+            Grid.Row="2"
+            Text="Article Content"
+            FontSize="Body"
+            x:Name="LblContent"
+            Margin="10"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"/>
+        <Button
+            Grid.Row="3"
+            Margin="20"
+            Text="Return"
+            WidthRequest="200"
+            HorizontalOptions="Center"
+            VerticalOptions="End"
+            Clicked="Button_Clicked"/>
+    </Grid>
 </ContentPage>
