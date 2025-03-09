@@ -3,10 +3,43 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NewsApp.Pages.NewsListPage"
              Title="NewsListPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <Grid RowDefinitions="Auto, *"
+          ColumnDefinitions="*,Auto,*">
+
+        <Button Grid.Row="0"
+                Grid.Column="0"
+                Text="Go Back"
+                Clicked="Button_Clicked"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+
+        <Label Grid.Row="0"
+               Grid.Column="1"
+               Text="News Pilot"
+               FontSize="Title"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               Padding="20"/>
+
+        <CollectionView Grid.Row="1"
+                        Grid.ColumnSpan="3"
+                        Margin= "5"
+                        x:Name="CvNews"
+                        SelectionMode="Single">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="15"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border Padding="5" Margin="5">
+                        <VerticalStackLayout Padding="10" Spacing="0" VerticalOptions="Center">
+                            <Image HeightRequest="200" Aspect="Fill" Source="{Binding Image}"/>
+                            <Label FontSize="Medium" Text="{Binding Title}"/>
+                        </VerticalStackLayout>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
 </ContentPage>
